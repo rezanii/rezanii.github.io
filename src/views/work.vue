@@ -81,7 +81,7 @@ export default {
                     source:
                         "https://github.com/arrezani/",
                     link: "https://rezanii.github.io/arrezani/",
-                    img: "sorting.png",
+                    img: "sortin.png",
                     codeTools: ["Vue JS"],
                     design: "Design by Me with Figma",
                 },
@@ -91,7 +91,7 @@ export default {
                         "Collaboration tool website for collection projects.",
                     source: "https://github.com/arrezani/",
                     link: "https://fpis.vercel.app/",
-                    img: "ideas.png",
+                    img: "idea.png",
                     codeTools: ["HTML", "Tailwind CSS", "Javascript"],
                     design: "Design by Me with Figma",
                 },
@@ -101,7 +101,7 @@ export default {
                         "Online shop for statue customization with 3d look.",
                     source: "https://github.com/arrezani/",
                     link: "https://recon.vercel.app/",
-                    img: "statued.png",
+                    img: "statue.png",
                     codeTools: [
                         "HTML",
                         "Tailwind CSS",
