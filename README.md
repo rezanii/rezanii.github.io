@@ -1,1 +1,1 @@
-new project
+new project profile
