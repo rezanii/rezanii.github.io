@@ -1,48 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import About from "../views/about.vue";
-import Skills from "../views/skills.vue";
-import Contact from "../views/contact.vue";
-import Work from "../views/work.vue";
+import Site from "../views/Site.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "Home Page",
-    component: Home
-  },
-  {
-    path: "/about",
-    name: "About",
-    component: About
-  },
-  {
-    path: "/skills",
-    name: "Skills",
-    component: Skills
-  },
-  {
-    path: "/contact",
-    name: "Contact Page",
-    component: Contact
-  },
-  {
-    path: "/work",
-    name: "My Work Page",
-    component: Work
-  }
+  { path: "/", name: "Home", component: Site },
+  // route lama -> anchor, supaya link lama tidak mati
+  { path: "/about", redirect: "/#about" },
+  { path: "/skills", redirect: "/#resume" },
+  { path: "/work", redirect: "/#projects" },
+  { path: "/contact", redirect: "/#contact" },
+  { path: "*", redirect: "/" }
 ];
 
-const router = new VueRouter({
+export default new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
-  scrollBehavior: function () {
-    return { x: 0, y: 0 }
-  }
+  routes
 });
-
-export default router;
