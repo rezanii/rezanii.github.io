@@ -1,0 +1,277 @@
+/* ============================================================
+   Design tokens — tema baru
+   ============================================================ */
+
+@import url("https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700");
+
+:root {
+    /* aksen */
+    --accent: #ef4444;
+    --accent-soft: #fef2f2;
+    --accent-dim: #dc2626;
+
+    /* permukaan terang */
+    --bg: #ffffff;
+    --bg-alt: #fafafa;
+    --surface: #ffffff;
+    --border: #ececec;
+
+    /* teks */
+    --fg: #0f1115;
+    --fg-muted: #6b7280;
+    --fg-faint: #9ca3af;
+
+    /* hero gradient */
+    --hero-from: #141a34;
+    --hero-via: #2a1836;
+    --hero-to: #3d1626;
+
+    /* bentuk */
+    --radius: 12px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    --shell: 1200px;
+    --gutter: clamp(1rem, 4vw, 2.5rem);
+    --sec-y: clamp(4.5rem, 9vw, 7.5rem);
+
+    --font: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+    --bg: #0b0d12;
+    --bg-alt: #10131a;
+    --surface: #141821;
+    --border: #232936;
+
+    --fg: #f3f4f6;
+    --fg-muted: #9aa3b2;
+    --fg-faint: #6b7483;
+
+    --accent-soft: rgba(255, 77, 77, 0.14);
+}
+
+/* ---------- dasar ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    transition: background 300ms ease, color 300ms ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- layout ---------- */
+
+.shell {
+    width: 100%;
+    max-width: var(--shell);
+    margin: 0 auto;
+    padding-inline: var(--gutter);
+}
+
+.section {
+    padding-block: var(--sec-y);
+}
+
+.section-alt {
+    background: var(--bg-alt);
+}
+
+/* ---------- kepala section (label merah → judul → garis) ---------- */
+
+.sec-head {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sec-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+}
+
+.sec-title {
+    font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.sec-rule {
+    width: 52px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+    margin: 1rem auto 0;
+}
+
+.sec-lead {
+    margin: 1.1rem auto 0;
+    max-width: 52ch;
+    color: var(--fg-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ---------- section bernomor (01 / 02 / 03) ---------- */
+
+.num-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+
+.num-head .num {
+    font-family: "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+}
+
+.num-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* ---------- tombol ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 240ms var(--ease), background 240ms ease,
+        color 240ms ease, border-color 240ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-dim);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: currentColor;
+    color: var(--fg);
+}
+
+.btn-on-dark {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-on-dark:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* ---------- tag pill ---------- */
+
+.pill {
+    display: inline-block;
+    padding: 0.26rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    border-radius: var(--radius-pill);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* ---------- kartu ---------- */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 320ms var(--ease), box-shadow 320ms ease,
+        border-color 320ms ease;
+}
+
+.card-topline {
+    border-top: 2px solid var(--accent);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+}
+
+:root[data-theme="dark"] .card:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- reveal ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 650ms var(--ease), transform 650ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .reveal,
+    .reveal * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
